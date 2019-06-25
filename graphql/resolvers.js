@@ -1,12 +1,8 @@
-const Jeayoung = {
-    name: "Jeayoung",
-    age: 18,
-    gender: "female"
-};
+import { getMovies }  from "./db.js";
 
 const resolvers = {
     Query: {
-        person: () => Jeayoung
+        movies: (_, {rating,limit}) => getMovies(limit, rating)
     }
 };
 
